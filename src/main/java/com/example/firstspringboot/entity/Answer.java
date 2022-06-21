@@ -1,5 +1,6 @@
 package com.example.firstspringboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -15,10 +16,14 @@ public class Answer {
     private Integer id;
     private String name;
     private Boolean correct;
-    @ManyToOne(cascade = {CascadeType.DETACH,
-            CascadeType.MERGE,
+
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
             CascadeType.PERSIST,
-            CascadeType.REFRESH})
+            CascadeType.MERGE,
+            CascadeType.REFRESH
+    })
     @JoinColumn(name = "question_id")
+    @JsonBackReference(value = "question-answer")
     private Question question;
 }

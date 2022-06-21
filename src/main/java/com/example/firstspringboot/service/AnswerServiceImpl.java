@@ -21,7 +21,7 @@ public class AnswerServiceImpl implements AnswerService{
     public Answer findById(Integer id) {
         return answerRepository.findById(id)
                 .orElseThrow(() ->
-                        new AnswerNotFoundException("Answer with id"+ id + "not found"));
+                        new AnswerNotFoundException("Answer with id "+ id + " not found"));
     }
 
     @Override

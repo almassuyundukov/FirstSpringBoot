@@ -21,7 +21,7 @@ public class LevelServiceImpl implements LevelService{
 
     @Override
     public Level findById(Integer id) {
-        return levelRepository.findById(id).orElseThrow(() -> new LevelNotFoundException("Level with this id"+ id + "not found"));
+        return levelRepository.findById(id).orElseThrow(() -> new LevelNotFoundException("Level with this id "+ id + " not found"));
     }
 
     @Override
