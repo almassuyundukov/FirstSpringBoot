@@ -25,9 +25,10 @@ public class AnswerServiceImpl implements AnswerService{
     }
 
     @Override
-    public List<Answer> findALl() {
+    public List<Answer> findAll() {
         List<Answer> answers = answerRepository.findAll();
-        if(answers.isEmpty()) throw new AnswerNotFoundException("Answer is not found in database");
+        if(answers.isEmpty())
+            throw new AnswerNotFoundException("Answer is not found in database");
         return answers;
     }
 
